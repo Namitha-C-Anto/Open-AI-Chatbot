@@ -6,7 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
+####
 ## Langsmith tracking
 os.environ['LANGCHAIN_API_KEY'] = str(os.getenv('LANGCHAIN_API_KEY'))
 os.environ['LANGCHAIN_TRACING_V2'] = "true"
@@ -57,4 +57,5 @@ if user_input:
 else:
 
     st.write("Please provide the query!")
+
 
