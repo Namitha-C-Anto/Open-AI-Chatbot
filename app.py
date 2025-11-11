@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ## Langsmith tracking
-os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')
+os.environ['LANGCHAIN_API_KEY'] = str(os.getenv('LANGCHAIN_API_KEY'))
 os.environ['LANGCHAIN_TRACING_V2'] = "true"
 os.environ['LANGCHAIN_PROJECT'] = "Q&A Chatbot with OpenAI"
 
@@ -50,4 +50,5 @@ if user_input:
     response = generate_response(user_input, api_key, llm, temperature, max_tokens)
     st.write(response)
 else:
+
     st.write("Please provide the query!")
